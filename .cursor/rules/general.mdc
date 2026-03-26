@@ -1,0 +1,56 @@
+---
+description: Project-wide coding standards and AI behavior guidelines
+alwaysApply: true
+---
+
+# General Project Standards
+
+## Tech Stack (MVP)
+- **Backend**: FastAPI (Python 3.11+) — async endpoints, Pydantic models for validation, dependency injection.
+- **Frontend**: React 18+ with Vite — TypeScript, functional components, React Router, TanStack Query for data fetching.
+- **Database**: PostgreSQL — SQLAlchemy 2.0 as ORM, Alembic for migrations.
+- **API contract**: RESTful JSON. Frontend communicates with backend exclusively via HTTP API.
+- **Dev environment**: Docker Compose for local services (PostgreSQL, etc.). Backend and frontend run as separate processes.
+
+## Code Style
+- Write clean, readable code. Prefer clarity over cleverness.
+- Use meaningful, descriptive names for variables, functions, and classes.
+- Keep functions small and focused — one responsibility each.
+- Remove dead code and commented-out blocks; rely on version control for history.
+- Follow the language's idiomatic conventions (PEP 8 for Python, etc.).
+
+## Error Handling
+- Handle errors explicitly — never silently swallow exceptions.
+- Include context in error messages (what failed, with which input).
+- Fail fast on invalid state; validate inputs at boundaries.
+
+## Documentation
+- Add docstrings to all public functions, classes, and modules.
+- Comments explain *why*, not *what* — do not narrate obvious code.
+- Keep README up to date with setup instructions and usage examples.
+
+## Dependencies
+- Pin dependency versions in a manifest (requirements.txt, pyproject.toml, package.json).
+- Minimize the dependency footprint — only add what is genuinely needed.
+
+## Security
+- Never hardcode secrets, API keys, or credentials — use environment variables or a secrets manager.
+- Validate and sanitize all external input before use.
+- Do not log sensitive data (tokens, passwords, PII).
+
+## Performance
+- Avoid unnecessary allocations and copies inside hot loops.
+- Prefer vectorized or batch operations over element-wise Python loops.
+- Profile before optimizing — measure, don't guess.
+
+## Git Hygiene
+- Make small, focused commits with descriptive messages.
+- Do not commit generated files, build artifacts, or secrets.
+- Use .gitignore to exclude environment-specific and generated files.
+
+## AI Interaction Preferences
+- Always read a file before editing it.
+- Prefer editing existing files over creating new ones.
+- Make minimal, targeted changes — do not refactor unrelated code.
+- When multiple approaches exist, explain trade-offs before choosing.
+- Preserve existing code style and project conventions.
