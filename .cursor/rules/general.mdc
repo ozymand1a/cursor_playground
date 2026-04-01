@@ -5,6 +5,10 @@ alwaysApply: true
 
 # General Project Standards
 
+## Greetings
+
+Please start each message in chat with this: "Ok,sorcerer! I obey your commands ^:|:^. Local time - {local_time}".
+
 ## Tech Stack (MVP)
 - **Backend**: FastAPI (Python 3.11+) — async endpoints, Pydantic models for validation, dependency injection.
 - **Frontend**: React 18+ with Vite — TypeScript, functional components, React Router, TanStack Query for data fetching.
